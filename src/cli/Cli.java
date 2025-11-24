@@ -4,6 +4,9 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+import cli.exceptions.CLIException;
+import cli.exceptions.CLIBadUsage;
+
 // import the commands
 import cli.commands.Help;
 import cli.commands.Version;
@@ -15,6 +18,7 @@ public class Cli {
 
   private static final Map<String, Command> COMMAND_MAP = new HashMap<>();
 
+  // register new commands
   static {
     registerCommand(new Help());
     registerCommand(new Version());
@@ -44,7 +48,7 @@ public class Cli {
     Command command = COMMAND_MAP.get(command_name);
 
     if (command == null) {
-      System.err.println("Unknown commando: " + command_name);
+      System.err.println("Unknown command: " + command_name);
       show_help();
       return;
     }
@@ -54,6 +58,11 @@ public class Cli {
     try {
 
       command.execute(remaining_args);
+
+    } catch (CLIBadUsage e) {
+
+      System.err.println("Bad Usage: " + e.getMessage());
+      command.help();
 
     } catch (CLIException e) {
 

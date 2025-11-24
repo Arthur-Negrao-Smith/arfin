@@ -19,4 +19,8 @@ public class Help implements Command {
   public void execute(String[] args) {
     Cli.show_help();
   }
+
+  @Override
+  public void help() {
+  }
 }

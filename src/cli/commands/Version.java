@@ -51,4 +51,8 @@ public class Version implements Command {
     System.out.println(name + "-" + version + " builded at " + build_date);
   }
 
+  @Override
+  public void help() {
+  }
+
 }

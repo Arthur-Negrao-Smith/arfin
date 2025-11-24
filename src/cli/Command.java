@@ -9,4 +9,6 @@ public interface Command {
   String getDescription();
 
   void execute(String[] args);
+
+  void help();
 }
