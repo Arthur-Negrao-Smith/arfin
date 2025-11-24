@@ -6,6 +6,7 @@ import java.util.Map;
 
 // import the commands
 import cli.commands.Help;
+import cli.commands.Version;
 
 /*
  * @brief Class to parse all commands
@@ -16,6 +17,7 @@ public class Cli {
 
   static {
     registerCommand(new Help());
+    registerCommand(new Version());
   }
 
   /*
