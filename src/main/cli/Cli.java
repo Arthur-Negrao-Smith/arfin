@@ -36,7 +36,7 @@ public class Cli {
    */
   public static void parse(String[] args) {
     if (args == null || args.length == 0) {
-      System.err.println("Too few arguments. The program need at least 1 command.");
+      System.err.println("Bad Usage: Too few arguments. The program need at least 1 command.");
       show_help();
       return;
     }
