@@ -1,9 +1,11 @@
-package cli.commands;
+package arfin.cli.commands;
 
-import cli.Command;
+import arfin.cli.Command;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.Properties;
 
 /*
@@ -11,21 +13,22 @@ import java.util.Properties;
  */
 public class Version implements Command {
 
-  private static final String PROPERTIES_FILE = "resources/version.properties";
+  private static final String PROPERTIES_FILE = "version.properties";
   private final Properties properties = new Properties();
 
   public Version() {
     try (
         InputStream input = getClass().getClassLoader().getResourceAsStream(PROPERTIES_FILE)) {
 
-      // to read the file with utf-8 decode
-      java.io.InputStreamReader reader = new java.io.InputStreamReader(input, java.nio.charset.StandardCharsets.UTF_8);
-
       if (input == null) {
         throw new IOException("Porpeties file don't finded: " + PROPERTIES_FILE);
       }
 
-      properties.load(reader);
+      // to read the file with utf-8 decode
+      try (InputStreamReader reader = new InputStreamReader(input, StandardCharsets.UTF_8)) {
+
+        properties.load(reader);
+      }
 
     } catch (IOException e) {
       throw new RuntimeException("Error to load program version: " + e.getMessage(), e);

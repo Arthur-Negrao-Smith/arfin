@@ -1,7 +1,7 @@
-package cli.commands;
+package arfin.cli.commands;
 
-import cli.Command;
-import cli.Cli;
+import arfin.cli.Command;
+import arfin.cli.Cli;
 
 public class Help implements Command {
 

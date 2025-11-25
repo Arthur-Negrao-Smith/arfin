@@ -1,15 +1,15 @@
-package cli;
+package arfin.cli;
 
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-import cli.exceptions.CLIException;
-import cli.exceptions.CLIBadUsage;
+import arfin.cli.exceptions.CLIException;
+import arfin.cli.exceptions.CLIBadUsage;
 
 // import the commands
-import cli.commands.Help;
-import cli.commands.Version;
+import arfin.cli.commands.Help;
+import arfin.cli.commands.Version;
 
 /*
  * @brief Class to parse all commands

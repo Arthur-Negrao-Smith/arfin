@@ -1,4 +1,4 @@
-package cli.exceptions;
+package arfin.cli.exceptions;
 
 public class CLIException extends RuntimeException {
   public CLIException(String message) {
