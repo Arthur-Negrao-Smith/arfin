@@ -1,4 +1,4 @@
-package arfin.cli.exceptions;
+package com.arfin.cli.exceptions;
 
 public class CLIBadUsage extends RuntimeException {
   public CLIBadUsage(String message) {

@@ -1,4 +1,4 @@
-package arfin.cli;
+package com.arfin.cli;
 
 /*
  * @brief Interface to CLI commands

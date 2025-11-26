@@ -1,6 +1,6 @@
-package arfin;
+package com.arfin;
 
-import arfin.cli.Cli;
+import com.arfin.cli.Cli;
 
 public class Arfin {
   public static void main(String[] args) {

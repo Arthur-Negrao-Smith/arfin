@@ -1,6 +1,6 @@
-package arfin.cli.commands;
+package com.arfin.cli.commands;
 
-import arfin.cli.Command;
+import com.arfin.cli.Command;
 
 import java.io.IOException;
 import java.io.InputStream;
