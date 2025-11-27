@@ -8,8 +8,9 @@ import com.arfin.cli.exceptions.CLIException;
 import com.arfin.cli.exceptions.CLIBadUsage;
 
 // import the commands
-import com.arfin.cli.commands.Help;
-import com.arfin.cli.commands.Version;
+import com.arfin.cli.commands.Command;
+import com.arfin.cli.commands.HelpCmd;
+import com.arfin.cli.commands.VersionCmd;
 
 /*
  * @brief Class to parse all commands
@@ -20,8 +21,8 @@ public class Cli {
 
   // register new commands
   static {
-    registerCommand(new Help());
-    registerCommand(new Version());
+    registerCommand(new HelpCmd());
+    registerCommand(new VersionCmd());
   }
 
   /*

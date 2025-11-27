@@ -1,6 +1,6 @@
 package com.arfin.cli.commands;
 
-import com.arfin.cli.Command;
+import com.arfin.cli.commands.Command;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -11,12 +11,12 @@ import java.util.Properties;
 /*
  * @brief Class to show app version
  */
-public class Version implements Command {
+public class VersionCmd implements Command {
 
   private static final String PROPERTIES_FILE = "version.properties";
   private final Properties properties = new Properties();
 
-  public Version() {
+  public VersionCmd() {
     try (
         InputStream input = getClass().getClassLoader().getResourceAsStream(PROPERTIES_FILE)) {
 

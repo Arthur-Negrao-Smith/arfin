@@ -1,9 +1,9 @@
 package com.arfin.cli.commands;
 
-import com.arfin.cli.Command;
+import com.arfin.cli.commands.Command;
 import com.arfin.cli.Cli;
 
-public class Help implements Command {
+public class HelpCmd implements Command {
 
   @Override
   public String getName() {
