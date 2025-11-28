@@ -19,4 +19,13 @@ public class User {
   private String hashed_password;
 
   private String salt;
+
+  public Long getId() {
+    return id;
+  }
+
+  public String getName() {
+    return name;
+  }
+
 }
