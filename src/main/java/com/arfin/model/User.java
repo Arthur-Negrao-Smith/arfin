@@ -1,5 +1,7 @@
 package com.arfin.model;
 
+import java.util.UUID;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,7 +14,7 @@ public class User {
 
   @Id
   @GeneratedValue(strategy = GenerationType.UUID)
-  private Long id;
+  private UUID id;
 
   private String name;
 
@@ -20,7 +22,7 @@ public class User {
 
   private String salt;
 
-  public Long getId() {
+  public UUID getId() {
     return id;
   }
 

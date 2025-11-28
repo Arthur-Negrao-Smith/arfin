@@ -1,6 +1,7 @@
 package com.arfin.service;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
@@ -24,7 +25,7 @@ public class UserService {
     return userRepository.save(user);
   }
 
-  public void delete(Long id) {
+  public void delete(UUID id) {
     userRepository.deleteById(id);
   }
 }
