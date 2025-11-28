@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:sqlite:arfin.db
+    driver-class-name: org.sqlite.JDBC
+    username: ""
+    password: ""
+
+  jpa:
+    database-platform: org.hibernate.community.dialect.SQLiteDialect
+    hibernate:
+      ddl-auto: update
+---
+spring:
+  config:
+    activate:
+      on-profile: cli
+logging:
+  level:
+    root: ERROR
