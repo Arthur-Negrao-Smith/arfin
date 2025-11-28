@@ -3,6 +3,8 @@ package com.arfin.controller;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,5 +23,10 @@ public class UserController {
   @GetMapping
   public List<User> getAll() {
     return userService.getAll();
+  }
+
+  @PostMapping
+  public User create(@RequestBody User user) {
+    return userService.save(user);
   }
 }
