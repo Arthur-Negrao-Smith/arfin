@@ -11,6 +11,7 @@ import com.arfin.cli.exceptions.CLIBadUsage;
 import com.arfin.cli.commands.Command;
 import com.arfin.cli.commands.HelpCmd;
 import com.arfin.cli.commands.VersionCmd;
+import com.arfin.cli.commands.StartCmd;
 
 /*
  * @brief Class to parse all commands
@@ -23,6 +24,7 @@ public class Cli {
   static {
     registerCommand(new HelpCmd());
     registerCommand(new VersionCmd());
+    registerCommand(new StartCmd());
   }
 
   /*
