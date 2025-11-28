@@ -25,3 +25,9 @@ replay_pid*
 
 # Maven
 target/
+
+# Others (LSPs and others)
+.project
+.classpath
+.settings/
+bin/
