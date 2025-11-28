@@ -26,6 +26,9 @@ replay_pid*
 # Maven
 target/
 
+# Database
+*.db
+
 # Others (LSPs and others)
 .project
 .classpath
