@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Bean;
 
 import com.arfin.cli.Cli;
 import com.arfin.cli.commands.StartCmd;
-import com.arfin.cli.enums.ProgramMode;
+import com.arfin.cli.util.ProgramMode;
 import com.arfin.cli.CliRunner;
 
 @SpringBootApplication
@@ -33,10 +33,12 @@ public class Arfin {
 
     // if cli, then disable server mode
     if (mode == ProgramMode.CLI) {
-      app.setAdditionalProfiles("cli");
       app.setWebApplicationType(WebApplicationType.NONE);
+
     } else if (mode == ProgramMode.SERVER) {
+      app.setAdditionalProfiles("server");
       app.setWebApplicationType(WebApplicationType.SERVLET);
+
     }
 
     app.run(args);

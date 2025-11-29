@@ -1,4 +1,10 @@
 spring:
+  application:
+    name: "arfin"
+
+  main:
+    banner-mode: "off"
+
   datasource:
     url: jdbc:sqlite:arfin.db
     driver-class-name: org.sqlite.JDBC
@@ -9,11 +15,25 @@ spring:
     database-platform: org.hibernate.community.dialect.SQLiteDialect
     hibernate:
       ddl-auto: update
+
+logging:
+  level:
+    root: "error"
+
 ---
 spring:
   config:
     activate:
-      on-profile: cli
+      on-profile: "server"
 logging:
   level:
-    root: ERROR
+    root: "info"
+
+---
+spring:
+  config:
+    activate:
+      on-profile: "dev"
+logging:
+  level:
+    root: "debug"
