@@ -44,6 +44,8 @@
   </dependencies>
 
   <build>
+    <finalName>arfin</finalName>
+
     <pluginManagement>
       <plugins>
         <plugin>
@@ -66,7 +68,7 @@
           </execution>
         </executions>
         <configuration>
-            <mainClass>com.arfin.Arfin</mainClass> 
+          <mainClass>com.arfin.Arfin</mainClass> 
         </configuration>
       </plugin>
     </plugins>
