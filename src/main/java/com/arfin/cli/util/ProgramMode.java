@@ -1,4 +1,4 @@
-package com.arfin.cli.enums;
+package com.arfin.cli.util;
 
 public enum ProgramMode {
   CLI, DEFAULT, SERVER

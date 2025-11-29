@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 import com.arfin.cli.commands.Command;
 import com.arfin.cli.exceptions.CLIBadUsage;
-import com.arfin.cli.enums.ProgramMode;
+import com.arfin.cli.util.ProgramMode;
 
 public class StartCmd implements Command {
 
