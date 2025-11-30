@@ -1,10 +1,8 @@
 package com.arfin.cli.commands;
 
-import java.util.Arrays;
-
-import com.arfin.cli.commands.Command;
 import com.arfin.cli.exceptions.CLIBadUsage;
 import com.arfin.cli.util.ProgramMode;
+import com.arfin.util.ColorPrint;
 
 public class StartCmd implements Command {
 
@@ -32,24 +30,28 @@ public class StartCmd implements Command {
 
   @Override
   public void execute(String[] args) {
-    if (args.length == 0 || args[0].equals("-h") || args[0].equals("--help")) {
+    if (args.length == 0) {
+      throw new CLIBadUsage("The " + this.getName() + " command needs arguments");
+    }
+
+    if (args[0].equals("-h") || args[0].equals("--help")) {
       help();
       return;
     }
 
     if (args.length == 1 && args[0].equalsIgnoreCase("cli")) {
-      System.out.println("Starting cli program...");
+      ColorPrint.print("Starting cli program...");
       progMode = ProgramMode.CLI;
       return;
     }
 
     if (args.length == 1 && args[0].equalsIgnoreCase("server")) {
-      System.out.println("Starting server mode...");
+      ColorPrint.print("Starting server mode...");
       progMode = ProgramMode.SERVER;
       return;
     }
 
-    throw new CLIBadUsage("Invalid arguments for 'start' command: " + Arrays.toString(args));
+    throw new CLIBadUsage("Invalid arguments for 'start' command: '" + String.join(" ", args) + "'");
   }
 
   public ProgramMode getProgMode() {

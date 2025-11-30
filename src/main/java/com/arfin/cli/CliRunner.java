@@ -3,20 +3,22 @@ package com.arfin.cli;
 import java.util.Scanner;
 
 import com.arfin.cli.util.CliState;
+import com.arfin.util.Color;
+import com.arfin.util.ColorPrint;
 
 public class CliRunner {
 
   public static void run() {
-    System.out.println("#################################");
-    System.out.println("#   Arfin Interative Terminal   #");
-    System.out.println("#################################");
+    ColorPrint.print("#################################");
+    ColorPrint.print("#   Arfin Interative Terminal   #");
+    ColorPrint.print("#################################");
 
     Scanner scanner = new Scanner(System.in);
     String input = "";
     String[] splited_input;
 
     while (!input.equalsIgnoreCase(CliState.EXIT_CLI)) {
-      System.out.print("arfin >>> ");
+      ColorPrint.print("\narfin >>> ", Color.BLUE, "");
 
       input = scanner.nextLine().trim();
       splited_input = split(input);
@@ -40,7 +42,7 @@ public class CliRunner {
 
     scanner.close();
 
-    System.out.println("Exiting from Arfin cli...");
+    ColorPrint.print("Exiting from Arfin cli...");
   }
 
   private static void parse_input(String input) {
