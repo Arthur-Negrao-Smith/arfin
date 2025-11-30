@@ -21,7 +21,7 @@ public class StartCmd implements Command {
   @Override
   public void help() {
     System.out.println("\nUsage: java Arfin start [argument]");
-    System.out.println("Avaliable commands:");
+    System.out.println("Avaliable arguments:");
 
     System.out.printf("  %-15s %s%n", "cli", "Initialize the application cli");
     System.out.printf("  %-15s %s%n", "server", "Initialize the application server");
