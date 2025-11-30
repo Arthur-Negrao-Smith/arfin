@@ -1,6 +1,5 @@
 package com.arfin.cli.commands;
 
-import com.arfin.cli.commands.Command;
 import com.arfin.cli.Cli;
 
 public class HelpCmd implements Command {
