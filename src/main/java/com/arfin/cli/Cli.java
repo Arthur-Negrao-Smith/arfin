@@ -20,17 +20,31 @@ public class Cli {
 
   private static final Map<String, Command> COMMAND_MAP = new HashMap<>();
 
-  // register new commands
+  // registers new commands that don’t rely on Spring Boot’s dependency injection
   static {
-    registerCommand(new HelpCmd());
-    registerCommand(new VersionCmd());
-    registerCommand(new StartCmd());
+    registerBasicCommand(new HelpCmd());
+    registerBasicCommand(new StartCmd());
+    registerBasicCommand(new VersionCmd());
   }
 
   /*
-   * @brief Method to add new command to cli
+   * @brief Method to add all spring boot dependent commands
    */
-  private static void registerCommand(Command command) {
+  public static void registerAllCommands(Map<String, Command> commandBeans) {
+
+    commandBeans.values().forEach(command -> {
+      String name = command.getName();
+
+      if (name != null && !name.isEmpty()) {
+        COMMAND_MAP.put(name, command);
+      }
+    });
+  }
+
+  /*
+   * @brief Method to add basic commands to cli
+   */
+  private static void registerBasicCommand(Command command) {
     COMMAND_MAP.put(command.getName(), command);
   }
 
@@ -83,9 +97,9 @@ public class Cli {
    * @brief Method to help the user with the app usage
    */
   public static void show_help() {
-    System.out.println("\nUsage: java Arfin <command> [arguments]");
+    System.out.println("\nUsage: java arfin <command> [arguments]");
     System.out.println("Avaliable commands:");
 
-    COMMAND_MAP.values().forEach(cmd -> System.out.printf("  %-10s %s%n", cmd.getName(), cmd.getDescription()));
+    COMMAND_MAP.values().forEach(cmd -> System.out.printf("  %-15s %s%n", cmd.getName(), cmd.getDescription()));
   }
 }
