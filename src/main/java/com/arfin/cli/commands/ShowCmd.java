@@ -4,17 +4,34 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
-import com.arfin.cli.Cli;
 import com.arfin.cli.exceptions.CLIBadUsage;
 import com.arfin.cli.util.CliTablePrinter;
 import com.arfin.model.User;
 import com.arfin.service.UserService;
 
+/**
+ * Command to show a content from arfin's table.
+ * <p>
+ * This class do database queries to show a information choiced by user.
+ * This class is a implementation of the {@code Command} interface.
+ * </p>
+ *
+ * @author Arthur Negrão
+ * @since 1.0.0
+ */
 @Component
 public class ShowCmd implements Command {
 
+  /**
+   * Service to request database's data.
+   */
   private UserService userService;
 
+  /**
+   * Constructor from {@code ShowCmd} to spring inject the {@code UserService}.
+   *
+   * @param userService Service to request database's data.
+   */
   public ShowCmd(UserService userService) {
     this.userService = userService;
   }
